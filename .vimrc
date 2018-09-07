@@ -56,6 +56,7 @@ Plugin 'nathanaelkane/vim-indent-guides.git'
 
 " Rails
 Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
 
 " React/JS:
 Plugin 'pangloss/vim-javascript'
@@ -72,6 +73,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
+
+" vim-ruby:
+let g:ruby_indent_assignment_style = 'variable'
 
 " vim-indent-guides plugin settings
 let g:indent_guides_enable_on_vim_startup=1
@@ -114,6 +118,7 @@ let g:ale_fixers = {
   \  '*': ['remove_trailing_lines', 'trim_whitespace'],
   \  'ruby': ['rufo', 'rubocop']
   \}
+autocmd BufWritePre * :%s/\s\+$//e
 " let g:ale_javascript_eslint_options={ 'space-before-function-paren': ['error', { 'named': 'never' } ] }
 " \  'javascript': ['eslint', 'prettier']
 " augroup FiletypeGroup
